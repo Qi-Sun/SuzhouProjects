@@ -1,3 +1,5 @@
 _NLP/
 _Data/
 _Result/
+.idea/
+*.conf
