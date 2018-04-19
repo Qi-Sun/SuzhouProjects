@@ -20,7 +20,10 @@ class wbPoint:
         arc = math.sin(self.latitude * math.pi / 180) * math.sin(otherPoint.latitude * math.pi / 180) +\
               math.cos(self.latitude * math.pi / 180) * math.cos(otherPoint.latitude * math.pi / 180) * \
               math.cos((self.longitude - otherPoint.longitude) * math.pi / 180)
-        return self.EarthRadius * math.acos(arc) * math.pi / 180
+        if arc >= 1.0:
+            return 0
+        else:
+            return self.EarthRadius * math.acos(arc) * math.pi / 180
 
     def __eq__(self, other):
         return self.latitude == other.latitude and self.longitude == other.longitude
