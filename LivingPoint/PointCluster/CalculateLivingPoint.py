@@ -63,21 +63,22 @@ def CalculateOneUser(userid,radius):
         CurUser.TimeFilterWeiboGroup[CurUser.TimeFilterWeiboList[i][0]] += 1
 
     #计算各点密度值
-    for point in CurUser.RawWeiboGroup.keys():
-        for point2 in CurUser.RawWeiboGroup.keys():
-            if point == point2:
-                continue
-            point.DensityValue += point.GetLocalDensity(point2,radius) * CurUser.RawWeiboGroup[point2]
+    if len(CurUser.RawWeiboGroup.keys()) > 0:
+        for point in CurUser.RawWeiboGroup.keys():
+            for point2 in CurUser.RawWeiboGroup.keys():
+                if point == point2:
+                    continue
+                point.DensityValue += point.GetLocalDensity(point2,radius) * CurUser.RawWeiboGroup[point2]
 
-    #检验
-    print len(CurUser.RawWeiboGroup)
-    print len(CurUser.TimeFilterWeiboGroup)
-    for sortedItem in sorted(CurUser.RawWeiboGroup.keys(), key=lambda item: -item.DensityValue):
-        print "\tPoint:%s\t\tValue:%.5f" % (sortedItem, sortedItem.DensityValue)
-    # -- print sorted(CurUser.RawWeiboGroup.keys())
+        #检验
+        #print len(CurUser.RawWeiboGroup)
+        #print len(CurUser.TimeFilterWeiboGroup)
+        #for sortedItem in sorted(CurUser.RawWeiboGroup.keys(), key=lambda item: -item.DensityValue):
+        #    print "\tPoint:%s\t\tValue:%.5f" % (sortedItem, sortedItem.DensityValue)
+        # -- print sorted(CurUser.RawWeiboGroup.keys())
 
-    ActivePoint = sorted(CurUser.RawWeiboGroup.keys(), key=lambda item: -item.DensityValue)[0]
-    GetWbInSuzhou_cursor.execute("update suzhou.all_user_info set activepoint = Point(%f,%f) where userid = %s" % (float(ActivePoint.latitude),float(ActivePoint.longitude),userid))
+        ActivePoint = sorted(CurUser.RawWeiboGroup.keys(), key=lambda item: -item.DensityValue)[0]
+        GetWbInSuzhou_cursor.execute("update suzhou.all_user_info set activepoint = Point(%f,%f) where userid = %s" % (float(ActivePoint.latitude),float(ActivePoint.longitude),userid))
 
     #计算筛选时间段内的各点密度值
     if len(CurUser.TimeFilterWeiboGroup.keys())  > 0:
@@ -86,9 +87,8 @@ def CalculateOneUser(userid,radius):
                 if point == point2:
                     continue
                 point.DensityValue_tf += point.GetLocalDensity(point2, radius) * CurUser.RawWeiboGroup[point2]
-
-    ActivePoint_tf = sorted(CurUser.TimeFilterWeiboGroup.keys(), key=lambda item: -item.DensityValue_tf)[0]
-    GetWbInSuzhou_cursor.execute("update suzhou.all_user_info set activepoint_tf = Point(%f,%f) where userid = %s" % (float(ActivePoint_tf.latitude),float(ActivePoint_tf.longitude),userid))
+        ActivePoint_tf = sorted(CurUser.TimeFilterWeiboGroup.keys(), key=lambda item: -item.DensityValue_tf)[0]
+        GetWbInSuzhou_cursor.execute("update suzhou.all_user_info set activepoint_tf = Point(%f,%f) where userid = %s" % (float(ActivePoint_tf.latitude),float(ActivePoint_tf.longitude),userid))
 
     GetWbInSuzhou_cursor.close()
     GetWbInSuzhou_conn.close()
@@ -96,7 +96,7 @@ def CalculateOneUser(userid,radius):
 
 if __name__ == "__main__":
     #CalculateOneUser(37237,200)
-    print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%s')
+    print datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     GetAllUser_Conn = pymysql.connect(host=MysqlDBinfo["db_host"], port=int(MysqlDBinfo["db_port"]),
                                       user=MysqlDBinfo["db_user"],
                                       passwd=MysqlDBinfo["db_passwd"], db=MysqlDBinfo["db_database"], charset='utf8')
@@ -109,4 +109,4 @@ if __name__ == "__main__":
     GetAllUser_Cursor.close()
     GetAllUser_Conn.close()
     print "All Done!"
-    print datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%s')
+    print datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
