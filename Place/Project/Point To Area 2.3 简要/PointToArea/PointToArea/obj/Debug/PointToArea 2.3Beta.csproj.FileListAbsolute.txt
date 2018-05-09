@@ -1,0 +1,15 @@
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\PointToArea 2.3Beta.exe.config
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\PointToArea 2.3Beta.exe
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\PointToArea 2.3Beta.pdb
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\MySql.Data.dll
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\GMap.NET.Core.xml
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\GMap.NET.WindowsForms.xml
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.csprojResolveAssemblyReference.cache
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea.MainForm.resources
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea.Properties.Resources.resources
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.csproj.GenerateResource.Cache
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.exe
+E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.pdb
+E:\FetchSinaWeibo\Projects\4-PointToPlace\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\PointToArea 2.3Beta.exe.config
+E:\FetchSinaWeibo\Projects\4-PointToPlace\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.exe
+E:\FetchSinaWeibo\Projects\4-PointToPlace\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.pdb
