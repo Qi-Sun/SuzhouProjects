@@ -103,7 +103,7 @@ if __name__ == "__main__":
     GetAllUser_Cursor = GetAllUser_Conn.cursor(cursor=pymysql.cursors.DictCursor)
     recordsCount = GetAllUser_Cursor.execute(r"SELECT userid FROM  suzhou.travel_users_prcity ;")
     records = GetAllUser_Cursor.fetchall()
-    for i in range(recordsCount):
+    for i in range(730250,recordsCount):
         CalculateOneUser(records[i]["userid"],200)
         print "%d \t %.3f%%" % (i, float(i * 100) / recordsCount)
     GetAllUser_Cursor.close()
