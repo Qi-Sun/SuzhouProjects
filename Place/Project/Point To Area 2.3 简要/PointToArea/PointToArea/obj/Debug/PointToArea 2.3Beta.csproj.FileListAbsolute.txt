@@ -13,3 +13,6 @@ E:\Dissertation\Projects\Point To Area 2.3 简要\PointToArea\PointToArea\obj\De
 E:\FetchSinaWeibo\Projects\4-PointToPlace\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\PointToArea 2.3Beta.exe.config
 E:\FetchSinaWeibo\Projects\4-PointToPlace\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.exe
 E:\FetchSinaWeibo\Projects\4-PointToPlace\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.pdb
+F:\SuzhouProjects\Place\Project\Point To Area 2.3 简要\PointToArea\PointToArea\bin\Debug\PointToArea 2.3Beta.exe.config
+F:\SuzhouProjects\Place\Project\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.exe
+F:\SuzhouProjects\Place\Project\Point To Area 2.3 简要\PointToArea\PointToArea\obj\Debug\PointToArea 2.3Beta.pdb
