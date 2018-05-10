@@ -30,10 +30,25 @@ namespace PointToPlace
         /// 用户在研究城市内的签到微博记录表
         /// </summary>
         public string CheckinTable { get; private set; }
-
+        /// <summary>
+        /// 研究城市中的景区信息表
+        /// </summary>
+        public string ScenicAreaTable { get; private set; }
+        /// <summary>
+        /// 数据库IP地址
+        /// </summary>
         private string DatabaseIP;
+        /// <summary>
+        /// 数据库
+        /// </summary>
         private string DatabaseSchema;
+        /// <summary>
+        /// 用户
+        /// </summary>
         private string DatabaseUser;
+        /// <summary>
+        /// 登陆密码
+        /// </summary>
         private string DatabasePwd;
 
         public DatabaseInterface()
@@ -43,13 +58,15 @@ namespace PointToPlace
             CityWeiboTable = "suzhou_weibos_sq";
             CheckinTable = "travel_poi_checkin_weibos_suzhou";
             AllWeiboTable = "travel_poi_users_weibodata_suzhou";
+            ScenicAreaTable = "Scenic_Area_Info";
+
 
             DatabaseIP = "127.0.0.1";
             DatabaseSchema = "suzhou";
             DatabaseUser = "root";
             DatabasePwd = "19950310";
         }
-        public DatabaseInterface(string poiT,string userT,string cityweiboT,string checkinT,string allweiboT,
+        public DatabaseInterface(string poiT,string userT,string cityweiboT,string checkinT,string allweiboT,string scenicT,
             string ip ,string  schema,string user ,string pwd)
         {
             PoiTable = poiT;
@@ -57,6 +74,7 @@ namespace PointToPlace
             CityWeiboTable = cityweiboT;
             CheckinTable = checkinT;
             AllWeiboTable = allweiboT;
+            ScenicAreaTable = scenicT;
             DatabaseIP = ip;
             DatabaseSchema = schema;
             DatabaseUser = user;
@@ -138,6 +156,68 @@ namespace PointToPlace
             //string connStr = "server=localhost;user=root;database=world;port=3306;password=******;";
         }
 
+        private string _GetScenicArea = @"SELECT * from {0}.{1} {2};";
+        /// <summary>
+        /// 获取景区列表
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
+        public string GetScenicAreaList(int start = 0  , int limit = 0)
+        {
+            string limitStr = "";
+            if (limit != 0)
+                limitStr = string.Format(" limit {0},{1}", start, limit);
+            return string.Format(_GetScenicArea, this.DatabaseSchema, this.ScenicAreaTable, limitStr);
+        }
+
+        private string _GetScenicAreaPOI = @"SELECT * from {0}.{1} where super = {2} {3};";
+        /// <summary>
+        /// 获取某一景区关联的POI信息
+        /// </summary>
+        /// <param name="areaName"></param>
+        /// <param name="limit"></param>
+        /// <param name="start"></param>
+        /// <returns></returns>
+        public string GetPoisByScenicArea(string areaName,int limit = 0, int start = 0)
+        {
+            string limitStr = "";
+            if (limit != 0)
+                limitStr = string.Format(" limit {0},{1}", start, limit);
+            return string.Format(_GetScenicAreaPOI, this.DatabaseSchema, this.PoiTable, areaName, limitStr);
+        }
+
+        private string _GetScenicAreaCheckin = @"SELECT * FROM {0}.{1} WHERE annotation_place_poiid in 
+(SELECT poiid FROM {0}.{2} WHERE super = {3} ) {4} ;";
+        /// <summary>
+        /// 获取某一景区关联的签到信息
+        /// </summary>
+        /// <param name="areaName"></param>
+        /// <param name="limit"></param>
+        /// <param name="start"></param>
+        /// <returns></returns>
+        public string GetCheckinWbByScenicArea(string areaName, int limit = 0, int start = 0)
+        {
+            string limitStr = "";
+            if (limit != 0)
+                limitStr = string.Format(" limit {0},{1}", start, limit);
+            return string.Format(_GetScenicAreaCheckin, this.DatabaseSchema, this.CheckinTable, this.PoiTable, limitStr);
+        }
+
+        private string _GetSomeGeoWeibo = @"SELECT * from {0}.{1} {2};";
+        /// <summary>
+        /// 获取研究城市内一部分的微博
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="start"></param>
+        /// <returns></returns>
+        public string GetSomeGeoWeibo(int limit = 0, int start = 0)
+        {
+            string limitStr = "";
+            if (limit != 0)
+                limitStr = string.Format(" limit {0},{1}", start, limit);
+            return string.Format(_GetSomeGeoWeibo, this.DatabaseSchema, this.CityWeiboTable, limitStr);
+        }
 
     }
 }

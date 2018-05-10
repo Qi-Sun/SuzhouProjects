@@ -4,8 +4,8 @@ F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\bin\Debug\PointToPlace
 F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\bin\Debug\GMap.NET.Core.xml
 F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\bin\Debug\GMap.NET.WindowsForms.xml
 F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\obj\Debug\PointToPlace.csprojResolveAssemblyReference.cache
-F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\obj\Debug\PointToPlace.Form1.resources
 F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\obj\Debug\PointToPlace.Properties.Resources.resources
 F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\obj\Debug\PointToPlace.csproj.GenerateResource.Cache
 F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\obj\Debug\PointToPlace.exe
 F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\obj\Debug\PointToPlace.pdb
+F:\SuzhouProjects\Place\Project\PointToPlace\PointToPlace\obj\Debug\PointToPlace.MainForm.resources
