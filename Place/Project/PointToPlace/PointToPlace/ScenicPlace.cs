@@ -23,10 +23,22 @@ namespace PointToPlace
     {
         public PlaceType ScenicType;
         public string ScenicName;
+        public string ScenicID;
         public List<DbscanCluster> ClusterList;
         public int PoiNum;
         public int CheckinNum;
-    
+
+        public ScenicPlace(string name,string id ,int poinum,int checkinnum,PlaceType type,DbscanCluster[] clusters)
+        {
+            ScenicName = name;
+            ScenicID = id;
+            PoiNum = poinum;
+            CheckinNum = checkinnum;
+            ScenicType = type;
+            ClusterList = new List<DbscanCluster>(clusters);
+        }
+         
+
 
     }
 }

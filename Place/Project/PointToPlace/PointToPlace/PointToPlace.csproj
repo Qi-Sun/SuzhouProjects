@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="DatabaseInterface.cs" />
     <Compile Include="DbscanCluster.cs" />
+    <Compile Include="DbscanMethod.cs" />
     <Compile Include="DbscanPoint.cs" />
     <Compile Include="GeoPoint.cs" />
     <Compile Include="MainForm.cs">

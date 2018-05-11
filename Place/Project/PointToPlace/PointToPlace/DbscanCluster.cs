@@ -8,7 +8,7 @@ namespace PointToPlace
 {
     public class DbscanCluster
     {
-        public int ID;
-        public List<DbscanPoint> PointList;
+        public int ClusterID;
+        public List<GeoPoint> PointList;
     }
 }
