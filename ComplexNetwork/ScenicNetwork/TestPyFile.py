@@ -2,15 +2,14 @@
 import igraph
 from PIL import Image
 import networkx as nx
-
-print "Hello World!"
+import pymysql
 
 G = nx.Graph()
 G.add_node('a')
 G.add_node('b')
 G.add_edge('b','c')
-G.add_edge('a','c')
-G.add_edge('c','b')
+G.add_edge('a','c',2)
+G.add_edge('c','b',3)
 
 print G.nodes()
 print G.edges()
