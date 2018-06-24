@@ -1,0 +1,12 @@
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\bin\Debug\DianPingMarkerMaker.exe.config
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\bin\Debug\DianPingMarkerMaker.exe
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\bin\Debug\DianPingMarkerMaker.pdb
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\bin\Debug\MySql.Data.dll
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\obj\Debug\DianPingMarkerMaker.DbServerInfoForm.resources
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\obj\Debug\DianPingMarkerMaker.MainForm.resources
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\obj\Debug\DianPingMarkerMaker.Properties.Resources.resources
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\obj\Debug\DianPingMarkerMaker.csproj.GenerateResource.Cache
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\obj\Debug\DianPingMarkerMaker.exe
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\obj\Debug\DianPingMarkerMaker.pdb
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\obj\Debug\DianPingMarkerMaker.SpecificMarker.resources
+F:\SuzhouProjects\DianPing\DianPingMarkerMaker\DianPingMarkerMaker\obj\Debug\DianPingMarkerMaker.csprojResolveAssemblyReference.cache

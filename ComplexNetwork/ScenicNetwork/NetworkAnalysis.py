@@ -17,7 +17,7 @@ G = nx.Graph()
 SzUser_Code_network
 FarUser_Code_network
 '''
-NetworkName = "SzUser_Code_network"
+NetworkName = "SzUser_Code_POInetwork"
 codefilename = 'Data/ScenicAndCode.txt'
 codefile = codecs.open(codefilename,encoding='utf-8')
 CodeSenic = dict()

@@ -1,0 +1,3 @@
+Coefficients:-1.05060990
+Intercept:2.20431678
+Correlation: -0.96006140
