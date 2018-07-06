@@ -57,6 +57,12 @@
             this.specificMarker3 = new DianPingMarkerMaker.SpecificMarker();
             this.specificMarker2 = new DianPingMarkerMaker.SpecificMarker();
             this.specificMarker1 = new DianPingMarkerMaker.SpecificMarker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxCommentID = new System.Windows.Forms.TextBox();
+            this.bttnSelectComment = new System.Windows.Forms.Button();
+            this.radioButtonAll = new System.Windows.Forms.RadioButton();
+            this.radioButtonUnMarked = new System.Windows.Forms.RadioButton();
+            this.radioButtonMarked = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,6 +113,12 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.radioButtonMarked);
+            this.groupBox2.Controls.Add(this.radioButtonUnMarked);
+            this.groupBox2.Controls.Add(this.radioButtonAll);
+            this.groupBox2.Controls.Add(this.bttnSelectComment);
+            this.groupBox2.Controls.Add(this.textBoxCommentID);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.bttnRandomShop);
             this.groupBox2.Controls.Add(this.bttnRandomCom);
             this.groupBox2.Controls.Add(this.bttnCurShopRndCom);
@@ -119,14 +131,14 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(818, 649);
+            this.groupBox2.Size = new System.Drawing.Size(818, 551);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "商铺与评论数据";
             // 
             // bttnRandomShop
             // 
-            this.bttnRandomShop.Location = new System.Drawing.Point(384, 23);
+            this.bttnRandomShop.Location = new System.Drawing.Point(409, 23);
             this.bttnRandomShop.Name = "bttnRandomShop";
             this.bttnRandomShop.Size = new System.Drawing.Size(75, 23);
             this.bttnRandomShop.TabIndex = 9;
@@ -136,7 +148,7 @@
             // 
             // bttnRandomCom
             // 
-            this.bttnRandomCom.Location = new System.Drawing.Point(360, 149);
+            this.bttnRandomCom.Location = new System.Drawing.Point(685, 43);
             this.bttnRandomCom.Name = "bttnRandomCom";
             this.bttnRandomCom.Size = new System.Drawing.Size(99, 23);
             this.bttnRandomCom.TabIndex = 8;
@@ -146,7 +158,7 @@
             // 
             // bttnCurShopRndCom
             // 
-            this.bttnCurShopRndCom.Location = new System.Drawing.Point(223, 149);
+            this.bttnCurShopRndCom.Location = new System.Drawing.Point(540, 43);
             this.bttnCurShopRndCom.Name = "bttnCurShopRndCom";
             this.bttnCurShopRndCom.Size = new System.Drawing.Size(111, 23);
             this.bttnCurShopRndCom.TabIndex = 7;
@@ -158,7 +170,7 @@
             // 
             this.comboBoxShopID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxShopID.FormattingEnabled = true;
-            this.comboBoxShopID.Location = new System.Drawing.Point(64, 151);
+            this.comboBoxShopID.Location = new System.Drawing.Point(53, 151);
             this.comboBoxShopID.Name = "comboBoxShopID";
             this.comboBoxShopID.Size = new System.Drawing.Size(121, 20);
             this.comboBoxShopID.TabIndex = 6;
@@ -181,7 +193,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(8, 184);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(804, 459);
+            this.richTextBox1.Size = new System.Drawing.Size(804, 361);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -192,12 +204,12 @@
             this.listBoxShopInfo.ItemHeight = 12;
             this.listBoxShopInfo.Location = new System.Drawing.Point(8, 52);
             this.listBoxShopInfo.Name = "listBoxShopInfo";
-            this.listBoxShopInfo.Size = new System.Drawing.Size(451, 76);
+            this.listBoxShopInfo.Size = new System.Drawing.Size(476, 76);
             this.listBoxShopInfo.TabIndex = 3;
             // 
             // buttonSelectShop
             // 
-            this.buttonSelectShop.Location = new System.Drawing.Point(291, 23);
+            this.buttonSelectShop.Location = new System.Drawing.Point(304, 23);
             this.buttonSelectShop.Name = "buttonSelectShop";
             this.buttonSelectShop.Size = new System.Drawing.Size(75, 23);
             this.buttonSelectShop.TabIndex = 2;
@@ -354,11 +366,71 @@
             this.specificMarker1.SpecificClassName = "景区景点";
             this.specificMarker1.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(193, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 12);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "CommentID";
+            // 
+            // textBoxCommentID
+            // 
+            this.textBoxCommentID.Location = new System.Drawing.Point(258, 151);
+            this.textBoxCommentID.Name = "textBoxCommentID";
+            this.textBoxCommentID.Size = new System.Drawing.Size(145, 21);
+            this.textBoxCommentID.TabIndex = 11;
+            // 
+            // bttnSelectComment
+            // 
+            this.bttnSelectComment.Location = new System.Drawing.Point(409, 151);
+            this.bttnSelectComment.Name = "bttnSelectComment";
+            this.bttnSelectComment.Size = new System.Drawing.Size(75, 23);
+            this.bttnSelectComment.TabIndex = 12;
+            this.bttnSelectComment.Text = "查询";
+            this.bttnSelectComment.UseVisualStyleBackColor = true;
+            this.bttnSelectComment.Click += new System.EventHandler(this.bttnSelectComment_Click);
+            // 
+            // radioButtonAll
+            // 
+            this.radioButtonAll.AutoSize = true;
+            this.radioButtonAll.Location = new System.Drawing.Point(614, 89);
+            this.radioButtonAll.Name = "radioButtonAll";
+            this.radioButtonAll.Size = new System.Drawing.Size(95, 16);
+            this.radioButtonAll.TabIndex = 13;
+            this.radioButtonAll.Text = "全部评论数据";
+            this.radioButtonAll.UseVisualStyleBackColor = true;
+            this.radioButtonAll.CheckedChanged += new System.EventHandler(this.radioButtonAll_CheckedChanged);
+            // 
+            // radioButtonUnMarked
+            // 
+            this.radioButtonUnMarked.AutoSize = true;
+            this.radioButtonUnMarked.Checked = true;
+            this.radioButtonUnMarked.Location = new System.Drawing.Point(614, 121);
+            this.radioButtonUnMarked.Name = "radioButtonUnMarked";
+            this.radioButtonUnMarked.Size = new System.Drawing.Size(83, 16);
+            this.radioButtonUnMarked.TabIndex = 14;
+            this.radioButtonUnMarked.TabStop = true;
+            this.radioButtonUnMarked.Text = "未标记数据";
+            this.radioButtonUnMarked.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMarked
+            // 
+            this.radioButtonMarked.AutoSize = true;
+            this.radioButtonMarked.Location = new System.Drawing.Point(614, 152);
+            this.radioButtonMarked.Name = "radioButtonMarked";
+            this.radioButtonMarked.Size = new System.Drawing.Size(83, 16);
+            this.radioButtonMarked.TabIndex = 15;
+            this.radioButtonMarked.TabStop = true;
+            this.radioButtonMarked.Text = "已标记数据";
+            this.radioButtonMarked.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 741);
+            this.ClientSize = new System.Drawing.Size(1197, 643);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -410,6 +482,12 @@
         private System.Windows.Forms.Button buttonInitialFields;
         private System.Windows.Forms.Button bttnRandomShop;
         private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.TextBox textBoxCommentID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button bttnSelectComment;
+        private System.Windows.Forms.RadioButton radioButtonMarked;
+        private System.Windows.Forms.RadioButton radioButtonUnMarked;
+        private System.Windows.Forms.RadioButton radioButtonAll;
     }
 }
 

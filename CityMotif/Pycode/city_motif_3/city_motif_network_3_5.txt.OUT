@@ -1,0 +1,17 @@
+FANMOD 1.1 subgraph enumeration
+-------------------------------
+
+Network name: D:\Projects\Graduation Project\Pycode\city_motif_3\city_motif_network_3.txt
+Network type: Directed
+Number of nodes: 359
+Number of edges: 19300
+Number of single edges: 5467
+Number of mutual edges: 13833
+
+Algorithm: enumeration
+Subgraph size: 5
+
+Generated 1000 random networks
+   with locally constant number of bidirectional edges,
+   3 exchanges per edge and 3 tries per edge.
+

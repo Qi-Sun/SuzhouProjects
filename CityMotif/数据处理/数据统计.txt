@@ -1,0 +1,128 @@
+游客人数、游览次数
+SELECT place_num_new, count(*) FROM suzhou.suzhou_action_sq_new where place_num_new > 0 group by place_num_new;
+
+place_num_new  count(*)旅游用户数量
+1	774968
+2	57587
+3	11358
+4	3386
+5	1284
+6	548
+7	210
+8	113
+9	38
+10	14
+11	7
+12	7
+13	6
+14	4
+
+place_num_new > 0  849530		旅游游客总数
+
+0	2734747
+1	774968
+2	57587
+3	11358
+4	3386
+5	1284
+6	548
+7	210
+8	113
+9	38
+10	14
+11	7
+12	7
+13	6
+14	4
+
+
+t_route 旅行路线
+景点、餐饮
+
+
+景区类型对应次数
+sname, type, sub_type
+super_a
+
+insert into suzhou.poi_tourism_place (SELECT poiid, title, type, type2, super_a, super, null, null, null FROM suzhou.final_poi_suzhou where super_a is not null);
+update suzhou.poi_tourism_place set type_new = (select distinct type from suzhou_tourism_place where sname = super_a);
+update suzhou.poi_tourism_place set sub_type = (select distinct sub_type from suzhou_tourism_place where sname = super_a);
+update suzhou.poi_tourism_place set location = (select distinct location from suzhou_tourism_place where sname = super_a);
+
+insert into suzhou.poi_tourism_place (SELECT poiid, title, type, type2, super_a, super, null, null, null FROM suzhou.final_poi_suzhou where super_a is not null and super_a in (select distinct sname from suzhou_tourism_place));
+update suzhou.poi_tourism_place set type_new = (select distinct type from suzhou_tourism_place where sname = super_a);
+update suzhou.poi_tourism_place set sub_type = (select distinct sub_type from suzhou_tourism_place where sname = super_a);
+update suzhou.poi_tourism_place set location = (select distinct location from suzhou_tourism_place where sname = super_a);
+
+select type_new, count(*) from suzhou.poi_tourism_place group by type_new order by count(*) desc;
+
+SELECT count(*) FROM suzhou.suzhou_weibos_sq_0110 where tourism_m_new = 1 and poiid in (select poiid from poi_tourism_place where type_new = "人文");
+
+
+SELECT count(*) FROM suzhou.suzhou_weibos_sq_0110 where poiid in (select poiid FROM suzhou.poi_tourism_place where type_new = "人文") and tourism_m_new = 1;
+
+SELECT count(distinct userid) FROM suzhou.suzhou_weibos_sq_0110 where poiid in (select poiid FROM suzhou.poi_tourism_place where type_new = "人文") and tourism_m_new = 1;
+
+
+FanMod  Kavosh
+G-tries 数据结构
+
+文献：reference
+13-15 17
+24-30
+
+图的同构：31
+
+无标号子图	标号子图		motif 发现的区别？
+几点的度		自同构和正规标号
+
+
+首先根据真实网络的统计特性生成度序列相同的随机网络, 然后在真实网络和随机网络中搜索特定规模的子图, 确定哪些子图是同构的并将同构的子图归为一类, 最后通过比较每一类子图在真实网络和随机网络中出现的频以确定其统计意义从而确定该子图是否为网络模体
+————http://kns.cnki.net/KXReader/Detail?dbcode=CJFD&filename=JYXH201708010&uid=WEEvREcwSlJHSldRa1FhcTdWajFuQ1ZMd0czSnIwd2hJUndIcDBFc3Zjbz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!————
+
+得到网络 motif 之后，抛弃不复合研究规律的模体，如不复合欧拉路径的模体，随后将概率较高的模体和真实旅游行为的次数结合起来，获得该模体对应的真实旅行数占总旅行数的比例，获取最高的点
+
+size = 1 和 size = 2 的 motif 发现的意义
+
+
+抛弃不复合规则的 motif，如 size = 3，两个点指向一个点的 motif
+http://sighingnow.github.io/algorithm/euler_path.html 欧拉图和半欧拉图 欧拉路径
+
+
+城市间的 motif 的提取与实现
+路线相似性的定义：地点数、差异地点数
+K-mean 聚类路线
+优势路线的提取
+
+
+ALTER TABLE `suzhou`.`suzhou_action_sq_new` 
+ADD COLUMN `motif_type` INT(11) NULL AFTER `trafficType`;
+update suzhou.suzhou_action_sq_new set motif_type = 1 where userid =  and action_id = ;
+
+链状
+['0100','010001000','0100001000010000','0100000100000100000100000','010000001000000100000010000001000000','0100000001000000010000000100000001000000010000000','0100000000100000000100000000100000000100000000100000000100000000']
+
+update suzhou.tourism_id set user_type = 0 where uid in (select userid from suzhou_weibos_sq_0110 where local_r = 1); # 本地游客
+update suzhou.tourism_id set user_type = 1 where uid in (select userid from suzhou_weibos_sq_0110 where local_r = 0 and adjacent = 0); # 外地非周边五市游客
+update suzhou.tourism_id set user_type = 2 where uid in (select userid from suzhou_weibos_sq_0110 where local_r = 0 and adjacent = 1); # 外地周边五市游客
+
+获取用户的长居地
+update suzhou.tourism_id set residence_city = (select distinct residence_city from suzhou.suzhou_action_sq_new where uid = userid);
+update suzhou.tourism_id set residence_province = (select distinct residence_province from suzhou.suzhou_action_sq_new where uid = userid);
+
+CREATE TABLE `suzhou`.`travel_users_city_routes_5` (
+  `userid` BIGINT(21) NOT NULL,
+  `travel_id` INT NULL,
+  `t_route` VARCHAR(2048) NULL,
+  `place_num` INT NULL COMMENT '不包括长居地的路径中的 城市访问次数，有可能重复访问',
+  PRIMARY KEY (`userid`))
+COMMENT = '间隔是 5 天';
+
+[欧拉回路判定算法](https://blog.csdn.net/vocaloid01/article/details/78551884)
+一、无向图 
+每个顶点的度数都是偶数，则存在欧拉回路。
+二、有向图（所有边都是单向的） 
+每个节顶点的入度都等于出度，则存在欧拉回路。
+
+[欧拉路径判断（有向图）](https://blog.csdn.net/CFrieman/article/details/78105777)：有两个点入度不等于出度，其他点入度等于出度，且一个点入度-出度=1，另一个点出度-入度=1，出度大的为起点；或者所有点入度等于出度
+https://blog.csdn.net/nameix/article/details/52288755

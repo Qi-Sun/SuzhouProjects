@@ -1,0 +1,13 @@
+gID:   6  freq:    37  ave_rand_freq:    56.42 (sd:  6.330)  conc: 0.00418  ave_rand_conc: 0.00630 (sd: 0.0007120)  f-ZScore:  -3.07  f-pValue: 1.00000000  c-ZScore:  -2.98  c-pValue: 1.00000000
+gID:  12  freq:   125  ave_rand_freq:   126.22 (sd:  9.424)  conc: 0.01412  ave_rand_conc: 0.01409 (sd: 0.0010536)  f-ZScore:  -0.13  f-pValue: 0.56700000  c-ZScore:   0.03  c-pValue: 0.48500000
+gID:  14  freq:   540  ave_rand_freq:   481.00 (sd: 19.083)  conc: 0.06101  ave_rand_conc: 0.05370 (sd: 0.0020512)  f-ZScore:   3.09  f-pValue: 0.00000000  c-ZScore:   3.56  c-pValue: 0.00000000
+gID:  36  freq:   107  ave_rand_freq:    92.11 (sd:  6.987)  conc: 0.01209  ave_rand_conc: 0.01028 (sd: 0.0007777)  f-ZScore:   2.13  f-pValue: 0.00900000  c-ZScore:   2.32  c-pValue: 0.00300000
+gID:  38  freq:    46  ave_rand_freq:    51.03 (sd:  5.557)  conc: 0.00520  ave_rand_conc: 0.00570 (sd: 0.0006213)  f-ZScore:  -0.91  f-pValue: 0.83600000  c-ZScore:  -0.81  c-pValue: 0.79300000
+gID:  46  freq:    75  ave_rand_freq:    84.86 (sd:  6.328)  conc: 0.00847  ave_rand_conc: 0.00947 (sd: 0.0007087)  f-ZScore:  -1.56  f-pValue: 0.95800000  c-ZScore:  -1.41  c-pValue: 0.93300000
+gID:  74  freq:   774  ave_rand_freq:   783.63 (sd: 16.076)  conc: 0.08745  ave_rand_conc: 0.08749 (sd: 0.0017185)  f-ZScore:  -0.60  f-pValue: 0.74400000  c-ZScore:  -0.02  c-pValue: 0.51700000
+gID:  78  freq:  1149  ave_rand_freq:  1351.30 (sd: 18.286)  conc: 0.12982  ave_rand_conc: 0.15087 (sd: 0.0018973)  f-ZScore: -11.06  f-pValue: 1.00000000  c-ZScore: -11.10  c-pValue: 1.00000000
+gID:  98  freq:    18  ave_rand_freq:    14.78 (sd:  2.474)  conc: 0.00203  ave_rand_conc: 0.00165 (sd: 0.0002760)  f-ZScore:   1.30  f-pValue: 0.13100000  c-ZScore:   1.39  c-pValue: 0.06800000
+gID: 102  freq:   233  ave_rand_freq:   236.40 (sd: 11.865)  conc: 0.02632  ave_rand_conc: 0.02639 (sd: 0.0013239)  f-ZScore:  -0.29  f-pValue: 0.62900000  c-ZScore:  -0.05  c-pValue: 0.51500000
+gID: 108  freq:   188  ave_rand_freq:   163.55 (sd:  7.855)  conc: 0.02124  ave_rand_conc: 0.01826 (sd: 0.0008649)  f-ZScore:   3.11  f-pValue: 0.00200000  c-ZScore:   3.45  c-pValue: 0.00000000
+gID: 110  freq:  1619  ave_rand_freq:  1654.88 (sd: 26.817)  conc: 0.18292  ave_rand_conc: 0.18477 (sd: 0.0032068)  f-ZScore:  -1.34  f-pValue: 0.92100000  c-ZScore:  -0.58  c-pValue: 0.73500000
+gID: 238  freq:  3940  ave_rand_freq:  3860.61 (sd: 11.236)  conc: 0.44515  ave_rand_conc: 0.43103 (sd: 0.0014749)  f-ZScore:   7.07  f-pValue: 0.00000000  c-ZScore:   9.57  c-pValue: 0.00000000

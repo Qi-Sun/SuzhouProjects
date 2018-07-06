@@ -1,0 +1,22 @@
+﻿DENSITY / AVERAGE MATRIX VALUE
+--------------------------------------------------------------------------------
+
+Input dataset:                          NearUser_Code_network_Matrix_nodiag (F:\SuzhouProjects\ComplexNetwork\Ucinet-suzhou\Data\NearUser_network\NearUser_Code_network_Matrix_nodiag)
+Output dataset:                         NearUser_Code_network_Matrix_nodiag-density (F:\SuzhouProjects\ComplexNetwork\Ucinet-suzhou\Data\NearUser_network\NearUser_Code_network_Matrix_nodiag-density)
+
+
+
+                                                   1          2          3          4 
+                                           Avg Value      Total    Std Dev Avg Wtd De 
+                                                                                 gree 
+                                          ---------- ---------- ---------- ---------- 
+    1 NearUser_Code_network_Matrix_nodiag     14.682     192478    161.671   1673.722 
+
+1 rows, 4 columns, 1 levels.
+
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  05 7�� 18 21:03:00
+UCINET 6.645 Copyright (c) 1992-2017 Analytic Technologies
+

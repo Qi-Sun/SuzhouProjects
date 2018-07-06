@@ -1,0 +1,48 @@
+Quantifying Tourist Behavior Patterns by Travel Motifs and Geo-Tagged Photos from Flickr 从旅游 motifs 和 Flickr 地理标签图像量化旅游行为模式
+被定义为在真实网络中出现频率远远高于随机网络中出现频率的子图。
+
+motif 提出的论文 Milo, R. et.al. Network Motifs: Simple Building Blocks of Complex Networks. Science 2002, 298, 824–827.
+
+1. 构建访问点轨迹		n 个景点和一个用户的 m 个访问点，得到用户的访问点轨迹
+2. 提取游客			游客访问景点的时间在一个较小的时间范围内，本地则分散在多个月，时间熵值高
+3. 合并景点内的访问点	简化游客路线，设定时间间隔，超过 5 天认为是两次访问
+4. 挖掘旅游网络中的 motif
+ 4.1 连续抽取：暴增子序列之间的点连续
+ 4.2 间隔抽取：访问点相对顺序不变，不一定连续
+5. 拓扑、时间、语义motif
+
+
+motif 多次重复的自网络
+
+* Unravelling daily human mobility motifs
+大尺度人类迁移模式三个表示量：
+ a. 旅行的距离分布 p(r)~r^(-β) β≈1.59
+ b. 回转半径 r_g(t)				给定时间内的一次单独旅游的特征距离
+ c. 访问的地点数量 S(t)~t^μ μ=0.6
+ 每个个体在他的特征距离（回转半径）内服从距离分布
+ 在聚集的旅行距离分布中观察到回转半径的分布在人口中呈幂律分布
+
+N 个节点的网络，边数 N_p(N) = 2^(N^2-N)
+ a. the need for sleep				旅行的开始和结束在同一个地方，很可能是家
+ b. the consistency of trips		每个地点至少被访问一次，对于 N>1，每个节点至少有一个进边和出边
+
+子网应该只是一种模式，可以在同一批节点中有相同的模式，但是节点的意义却是可以不同的。
+
+Many systems represented as networks consist of various subnetworks, either topological
+or temporal [25]. If these subnetworks occur more often than in randomized versions of the entire network, these subnetworks are called motifs. 
+
+(I) motifs of size N consist of a tour with only one stop and
+another tour with N – 2 stops. (II) Motifs of size N consist of only a single tour with N stops. (III) Motifs of size N consist of two tours with one stop and another
+tour with N – 3 stops. (IV) Motifs of size N consist of a tour with two stops and another tour with N – 3 stops. Despite the fact that the number of workers is
+significantly different in both cities, the rank and the probability to find a specific motif exhibit similar behaviour.
+
+分类原则：
+N 节点的 motifs 有一次停顿和 N-2 节点的另一个旅行			T(1)+T(N-2)
+N 节点的 motifs 有一个 N 次停顿的节点组成					T(N-1)
+N 节点的 motifs 有两个一次停顿和 N-3 次停顿的旅行组成		T(1)+T(1)+T(N-3)
+N 节点的 motifs 有一个两次停顿和 N-3 次停顿的旅行组成		T(2)+T(N-3)
+
+T(x)
+禁止x<0
+忽视x=0
+x<=6 每天游玩地点上限为 3

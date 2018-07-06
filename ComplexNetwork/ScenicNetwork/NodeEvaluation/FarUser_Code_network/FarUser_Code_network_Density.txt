@@ -1,0 +1,22 @@
+﻿DENSITY / AVERAGE MATRIX VALUE
+--------------------------------------------------------------------------------
+
+Input dataset:                          FarUser_Code_network_Matrix_nodiag (F:\SuzhouProjects\ComplexNetwork\Ucinet-suzhou\Data\FarUser_network\FarUser_Code_network_Matrix_nodiag)
+Output dataset:                         FarUser_Code_network_Matrix_nodiag-density (F:\SuzhouProjects\ComplexNetwork\Ucinet-suzhou\Data\FarUser_network\FarUser_Code_network_Matrix_nodiag-density)
+
+
+
+                                                  1          2          3          4 
+                                          Avg Value      Total    Std Dev Avg Wtd De 
+                                                                                gree 
+                                         ---------- ---------- ---------- ---------- 
+    1 FarUser_Code_network_Matrix_nodiag     25.409     293632    223.250   2718.815 
+
+1 rows, 4 columns, 1 levels.
+
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  05 7�� 18 21:16:01
+UCINET 6.645 Copyright (c) 1992-2017 Analytic Technologies
+

@@ -1,0 +1,83 @@
+FANMOD 1.1 subgraph enumeration
+-------------------------------
+
+Network name: D:\Projects\Graduation Project\Pycode\network.txt
+Network type: Directed
+Number of nodes: 43
+Number of edges: 650
+Number of single edges: 132
+Number of mutual edges: 518
+
+Algorithm: enumeration
+Subgraph size: 3
+
+Generated 1000 random networks
+   with locally constant number of bidirectional edges,
+   3 exchanges per edge and 1000 tries per edge.
+
+8851 subgraphs were enumerated in the original network.
+8993612 subgraphs were enumerated in the random networks.
+9002463 subgraphs were enumerated in all networks.
+
+For the random networks: 1572057898 tries were made, 402861 were successful.
+Randomization took 253.467 seconds.
+Enumeration took 6.393 seconds.
+
+
+Result overview:
+
+  ID Adj   Frequency     Mean-Freq  Standard-Dev    Z-Score  p-Value
+          [Original]      [Random]      [Random]
+
+ 238 011     44.515%       41.975%    0.00079069     32.118        0
+     101
+     110
+
+ 174 010     18.292%       19.903%     0.0018897    -8.5248        1
+     101
+     110
+
+  78 001     12.982%       16.376%     0.0014171    -23.953        1
+     001
+     110
+
+ 164 010     8.7448%       8.1188%     0.0013436     4.6594        0
+     100
+     100
+
+  14 000      6.101%       4.8512%     0.0010704     11.676        0
+     001
+     110
+
+ 102 001     2.6325%       2.1686%     0.0010492     4.4207    0.001
+     100
+     110
+
+ 166 010     2.1241%       1.5946%    0.00074664     7.0906        0
+     100
+     110
+
+  12 000     1.4123%         1.57%    0.00096935     -1.627    0.954
+     001
+     100
+
+  36 000     1.2089%       1.1424%    0.00062904     1.0572    0.162
+     100
+     100
+
+  46 000    0.84736%      0.67102%    0.00051267     3.4396    0.001
+     101
+     110
+
+  38 000    0.51972%      0.72171%    0.00066772    -3.0252    0.998
+     100
+     110
+
+   6 000    0.41803%       0.6969%     0.0005969     -4.672        1
+     000
+     110
+
+ 140 010    0.20337%      0.21073%    0.00038073   -0.19335    0.537
+     001
+     100
+

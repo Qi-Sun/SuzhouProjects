@@ -1,0 +1,37 @@
+[2012/03/16] NetMODE 1.04
+---------------------------
+* Fix bug on multithread sync
+* Add new option
+
+
+[2011/09/08] NetMODE 1.03
+---------------------------
+* Modified some output
+
+
+[2011/08/26] NetMODE 1.02
+---------------------------
+* Add uniform random graph generate method (-e 4)
+
+* Add p-value
+
+* Add burnin progress output (output per 10%)
+
+* Modified random graph seaching progress output (output per 10%)
+
+* Modified data type of variable "burnin" to unsigned long long
+
+* Modified format of output.
+
+
+[2011/08/03] NetMODE 1.01
+---------------------------
+
+* Fixed bug on outputing adjMat.txt.
+
+* Fixed bug on generation of random graph.
+
+* Modified description of parameter option "-v" (interface mode (for interfacing with e.g. R)).
+
+* Modified format of output.
+

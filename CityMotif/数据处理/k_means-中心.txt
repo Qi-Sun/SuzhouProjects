@@ -1,0 +1,21 @@
+k = 3
+SELECT t_route FROM suzhou.suzhou_action_sq_new where t_route is not null and place_num_new > 1 and userid in (select uid from tourism_id);
+SELECT t_route FROM suzhou.suzhou_action_sq_new where t_route is not null and place_num_new > 1 and userid in (select uid from tourism_id where user_type = 0);
+SELECT t_route FROM suzhou.suzhou_action_sq_new where t_route is not null and place_num_new > 1 and userid in (select uid from tourism_id where user_type = 1);
+SELECT t_route FROM suzhou.suzhou_action_sq_new where t_route is not null and place_num_new > 1 and userid in (select uid from tourism_id where user_type = 2);
+
+三类中心
+所有	[['观前街', '山塘'], ['同里', '金鸡湖'], ['金鸡湖', '平江路']]
+0	[['观前街', '山塘', '石路', '金鸡湖'], ['观前街', '平江路'], ['金鸡湖', '阳澄湖']]
+1	[['观前街', '平江路', '金鸡湖', '山塘'], ['平江路', '拙政园'], ['虎丘山', '寒山寺', '观前街']]
+2	[['西山', '木渎', '阳澄湖'], ['观前街', '平江路', '拙政园'], ['金鸡湖', '观前街']]
+
+除去 观前街、金鸡湖、平江路 三个共有的地点
+
+【商业、人文】【商业街、历史文化街】	
+【人文、商业】【古镇、商业街、观光休闲】
+【商业、人文】【商业街、休闲、历史文化街】
+
+0	'山塘', '石路', '阳澄湖'					【人文、度假区】 【历史文化街、商业街、自然，生态】
+1	'山塘', '拙政园', '虎丘山', '寒山寺'	 	【人文】 【历史文化街、园林、观光、古迹、寺庙】
+2	'西山', '木渎', '阳澄湖', '拙政园' 		【人文、度假区】 【岛屿、古镇、历史文化街、商业街、自然，生态、园林】

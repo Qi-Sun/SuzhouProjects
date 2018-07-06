@@ -52,4 +52,4 @@ def MatrixToEdgeList(matrixFile,edgeFile,NodeCount):
     return
 
 if __name__ == "__main__":
-    EdgeListToMatrix("Data/SzUser_Code_network.txt","Data/SzUser_Code_network_Matrix.txt",108)
+    EdgeListToMatrix("Data/FarUser_Code_POInetwork_Closedto.txt","Data/FarUser_Code_POInetwork_Closedto_Matrix_nodiag.txt",115)

@@ -1,0 +1,83 @@
+FANMOD 1.1 subgraph enumeration
+-------------------------------
+
+Network name: D:\Projects\Graduation Project\Pycode\city_motif_3\city_motif_network_3.txt
+Network type: Directed
+Number of nodes: 359
+Number of edges: 19300
+Number of single edges: 5467
+Number of mutual edges: 13833
+
+Algorithm: enumeration
+Subgraph size: 3
+
+Generated 50 random networks
+   with locally constant number of bidirectional edges,
+   3 exchanges per edge and 3 tries per edge.
+
+1929567 subgraphs were enumerated in the original network.
+103274498 subgraphs were enumerated in the random networks.
+105204065 subgraphs were enumerated in all networks.
+
+For the random networks: 7897390 tries were made, 762676 were successful.
+Randomization took 14.139 seconds.
+Enumeration took 170.71 seconds.
+
+
+Result overview:
+
+  ID Adj   Frequency     Mean-Freq  Standard-Dev    Z-Score  p-Value
+          [Original]      [Random]      [Random]
+
+  78 001     40.653%       50.207%      0.019601    -4.8744        1
+     001
+     110
+
+ 238 011     14.531%       8.8563%      0.011312     5.0168        0
+     101
+     110
+
+  14 000     13.202%       10.968%      0.007031     3.1778        0
+     001
+     110
+
+ 164 010     12.435%       10.238%     0.0069541     3.1594        0
+     100
+     100
+
+ 174 010     9.8889%        11.17%     0.0069502    -1.8438     0.94
+     101
+     110
+
+  12 000     2.9738%       2.9744%    0.00028505  -0.022595     0.58
+     001
+     100
+
+   6 000     1.5126%       1.5019%    0.00014145    0.75656     0.22
+     000
+     110
+
+  36 000     1.4908%       1.4881%    0.00014268    0.18651      0.5
+     100
+     100
+
+ 102 001     1.4617%       1.0854%    0.00098613     3.8165        0
+     100
+     110
+
+  46 000    0.76012%      0.56768%    0.00050046     3.8453        0
+     101
+     110
+
+ 166 010    0.70399%      0.52185%    0.00050115     3.6345        0
+     100
+     110
+
+  38 000     0.2895%      0.31759%    0.00018176    -1.5456     0.92
+     100
+     110
+
+ 140 010   0.097483%      0.10341%   5.5258e-005    -1.0718     0.84
+     001
+     100
+

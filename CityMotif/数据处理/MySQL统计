@@ -1,0 +1,29 @@
+游客访问点数目
+UPDATE tourism_id 
+SET 
+    place_count = (SELECT 
+            poiid
+        FROM
+            tourism_poi
+        WHERE
+            poiid IN (SELECT 
+                    poiid
+                FROM
+                    suzhou_weibos_sq_0110
+                WHERE
+                    userid = uid));
+
+游客游览的景点数目
+UPDATE tourism_id 
+SET 
+    place_count = (SELECT 
+            count(distinct super)
+        FROM
+            tourism_poi
+        WHERE
+            poiid IN (SELECT 
+                    distinct poiid
+                FROM
+                    suzhou_weibos_sq_0110
+                WHERE
+                    userid = uid));

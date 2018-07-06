@@ -1,0 +1,5 @@
+*.html
+*.png
+Pycode/__pycache__/
+Pycode/tmp_save/
+Pycode/.idea/

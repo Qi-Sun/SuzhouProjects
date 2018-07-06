@@ -42,5 +42,18 @@ namespace DianPingMarkerMaker
                 return -1;
             else return 0;
         }
+
+        public void SetMarkerValue(int value)
+        {
+            if (value > 0)
+            {
+                this.rB_Positive.Checked = true;
+            }
+            else if (value < 0)
+            {
+                this.rB_negative.Checked = true;
+            }
+            else this.rB_neutral.Checked = true;
+        }
     }
 }

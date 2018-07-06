@@ -168,6 +168,11 @@ WHERE
 
         private void buttonSelectShop_Click(object sender, EventArgs e)
         {
+            //重置标记
+            foreach (var marker in SpecificMarkerList)
+            {
+                marker.ResetTheRadioButton();
+            }
             string shopTitle = textBoxShopTitle.Text;
             string _SelectShopSQL_Pattern = @"Select * From {0}.{1} WHERE shop_title = '{2}';";
             DataTable shopInfo = DatabaseAccess.DataTable_ExecuteReader(this.ConnettingString,
@@ -204,6 +209,11 @@ WHERE
 
         private void bttnCurShopRndCom_Click(object sender, EventArgs e)
         {
+            //重置标记
+            foreach (var marker in SpecificMarkerList)
+            {
+                marker.ResetTheRadioButton();
+            }
             if (comboBoxShopID.SelectedItem == null)
             {
                 MessageBox.Show("未选择商铺");
@@ -212,18 +222,34 @@ WHERE
             PicOrderID++;
             labelStatus.Text = "";
             string shopId = comboBoxShopID.SelectedItem.ToString();
-            string _SelectSQL_pattern = @"Select * from {0}.{1} where shop_id = {2} order by rand() limit 1;";
-            string selectSQL = string.Format(_SelectSQL_pattern, DBSchema, DBTScenicComment, shopId);
+            string isCommentMarked = "";
+            if (radioButtonAll.Checked == true)
+            {
+                isCommentMarked = "";
+               
+            }
+            else if (radioButtonMarked.Checked == true)
+            {
+                isCommentMarked = " and Marked > 0 ";
+            }
+            else if (radioButtonUnMarked.Checked == true)
+            {
+                isCommentMarked = " and Marked = 0 ";
+            }
+            string _SelectSQL_pattern = @"Select * from {0}.{1} where shop_id = {2} {3} order by rand() limit 1;";
+            string selectSQL = string.Format(_SelectSQL_pattern, DBSchema, DBTScenicComment, shopId, isCommentMarked);
             DataTable comInfo = DatabaseAccess.DataTable_ExecuteReader(this.ConnettingString, selectSQL);
             richTextBox1.Clear();
             if (comInfo == null)
             {
                 richTextBox1.AppendText("当前查询无评论");
                 CurCommentID = null;
+                textBoxCommentID.Text = "";
             }
             else
             {
                 CurCommentID = comInfo.Rows[0]["com_id"].ToString();
+                textBoxCommentID.Text = CurCommentID;
                 string comText = "\t" + comInfo.Rows[0]["com_text"].ToString() + "\r\n\r\n";
                 string scoreText = "\t" + comInfo.Rows[0]["score"].ToString() + "\r\n\r\n";
                 string timeText = "\t" + comInfo.Rows[0]["post_time"].ToString() + "\r\n\r\n";
@@ -241,6 +267,19 @@ WHERE
 
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
 
+                string positiveAspect = comInfo.Rows[0]["PositiveAspects"].ToString();
+                string[] posAspects = positiveAspect.Split(';');
+                for (int i = 0; i < posAspects.Length -1; i++)
+                {
+                    GetMarkerByName(posAspects[i]).SetMarkerValue(1);
+                }
+                string negativeAspect = comInfo.Rows[0]["NegativeAspects"].ToString();
+                string[] negAspects = negativeAspect.Split(';');
+                for (int i = 0; i < negAspects.Length - 1; i++)
+                {
+                    GetMarkerByName(negAspects[i]).SetMarkerValue(-1);
+                }
+                /*
                 for (int i = 0; i < picUrlList.Length; i++)
                 {
                     if (picUrlList[i].Length < 5)
@@ -251,26 +290,46 @@ WHERE
                     Clipboard.SetImage(ZoomBitmap(bmp, richTextBox1.Width - 10));  //将Bitmap类对象写入剪贴板
                     richTextBox1.Paste();   //将剪贴板中的对象粘贴到RichTextBox1
                 }
-
+                */
             }
         }
 
         private void bttnRandomCom_Click(object sender, EventArgs e)
         {
+            //重置标记
+            foreach (var marker in SpecificMarkerList)
+            {
+                marker.ResetTheRadioButton();
+            }
             PicOrderID++;
             labelStatus.Text = "";
-            string _SelectSQL_pattern = @"Select * from {0}.{1} order by rand() limit 1;";
-            string selectSQL = string.Format(_SelectSQL_pattern, DBSchema, DBTScenicComment);
+            string isCommentMarked = "";
+            if (radioButtonAll.Checked == true)
+            {
+                isCommentMarked = "";
+            }
+            else if (radioButtonMarked.Checked == true)
+            {
+                isCommentMarked = " where Marked > 0 ";
+            }
+            else if (radioButtonUnMarked.Checked == true)
+            {
+                isCommentMarked = " where Marked = 0 ";
+            }
+            string _SelectSQL_pattern = @"Select * from {0}.{1} {2} order by rand() limit 1;";
+            string selectSQL = string.Format(_SelectSQL_pattern, DBSchema, DBTScenicComment, isCommentMarked);
             DataTable comInfo = DatabaseAccess.DataTable_ExecuteReader(this.ConnettingString, selectSQL);
             richTextBox1.Clear();
             if (comInfo == null)
             {
                 richTextBox1.AppendText("当前查询无评论");
                 CurCommentID = null;
+                textBoxCommentID.Text = "";
             }
             else
             {
                 CurCommentID = comInfo.Rows[0]["com_id"].ToString();
+                textBoxCommentID.Text = CurCommentID;
                 string shopId = comInfo.Rows[0]["shop_id"].ToString();
                 try
                 {
@@ -321,6 +380,19 @@ WHERE
 
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
 
+                string positiveAspect = comInfo.Rows[0]["PositiveAspects"].ToString();
+                string[] posAspects = positiveAspect.Split(';');
+                for (int i = 0; i < posAspects.Length - 1; i++)
+                {
+                    GetMarkerByName(posAspects[i]).SetMarkerValue(1);
+                }
+                string negativeAspect = comInfo.Rows[0]["NegativeAspects"].ToString();
+                string[] negAspects = negativeAspect.Split(';');
+                for (int i = 0; i < negAspects.Length - 1; i++)
+                {
+                    GetMarkerByName(negAspects[i]).SetMarkerValue(-1);
+                }
+                /*
                 for (int i = 0; i < picUrlList.Length; i++)
                 {
                     if (picUrlList[i].Length < 5)
@@ -331,6 +403,7 @@ WHERE
                     Clipboard.SetImage(ZoomBitmap(bmp, richTextBox1.Width - 10));  //将Bitmap类对象写入剪贴板
                     richTextBox1.Paste();   //将剪贴板中的对象粘贴到RichTextBox1
                 }
+                */
 
             }
         }
@@ -400,6 +473,7 @@ set
     Marked = 0;
 ";
                 DatabaseAccess.Execute_NonQuery(this.ConnettingString, string.Format(updateSQL, DBSchema, DBTScenicComment));
+                MessageBox.Show("字段添加成功");
             }
             catch (Exception ex)
             {
@@ -419,6 +493,13 @@ set
 
         private void bttnRandomShop_Click(object sender, EventArgs e)
         {
+            //重置标记
+            foreach (var marker in SpecificMarkerList)
+            {
+                marker.ResetTheRadioButton();
+            }
+            richTextBox1.Text = "";
+            textBoxCommentID.Text = "";
             string _SelectShopSQL_Pattern = @"Select * From {0}.{1} order by rand() limit 1;";
             DataTable shopInfo = DatabaseAccess.DataTable_ExecuteReader(this.ConnettingString,
                 string.Format(_SelectShopSQL_Pattern, this.DBSchema, this.DBTScenic));
@@ -461,6 +542,124 @@ set
                 Directory.GetFiles(directoryPath).ToList().ForEach(File.Delete);
             }
             catch { }
+        }
+
+        private void bttnSelectComment_Click(object sender, EventArgs e)
+        {
+            //重置标记
+            foreach (var marker in SpecificMarkerList)
+            {
+                marker.ResetTheRadioButton();
+            }
+            CurCommentID = this.textBoxCommentID.Text;
+            PicOrderID++;
+            labelStatus.Text = "";
+            string _SelectSQL_pattern = @"Select * from {0}.{1} where com_id = '{2}';";
+            string selectSQL = string.Format(_SelectSQL_pattern, DBSchema, DBTScenicComment, CurCommentID);
+            DataTable comInfo = DatabaseAccess.DataTable_ExecuteReader(this.ConnettingString, selectSQL);
+            richTextBox1.Clear();
+            if (comInfo == null)
+            {
+                richTextBox1.AppendText("当前查询无评论");
+                CurCommentID = null;
+                textBoxCommentID.Text = "";
+            }
+            else
+            {
+                CurCommentID = comInfo.Rows[0]["com_id"].ToString();
+                textBoxCommentID.Text = CurCommentID;
+                string shopId = comInfo.Rows[0]["shop_id"].ToString();
+                try
+                {
+                    string _SelectShopSQL_Pattern = @"Select * From {0}.{1} WHERE shop_id = '{2}';";
+                    DataTable shopInfo = DatabaseAccess.DataTable_ExecuteReader(this.ConnettingString,
+                        string.Format(_SelectShopSQL_Pattern, this.DBSchema, this.DBTScenic, shopId));
+                    listBoxShopInfo.Items.Clear();
+                    comboBoxShopID.Items.Clear();
+                    if (shopInfo == null)
+                    {
+                        listBoxShopInfo.Items.Add("无当前查询的商铺名称");
+                        bttnCurShopRndCom.Enabled = false;
+                        CurCommentID = null;
+                    }
+                    else if (shopInfo.Rows.Count > 0)
+                    {
+                        bttnCurShopRndCom.Enabled = true;
+                        textBoxShopTitle.Text = shopInfo.Rows[0]["shop_title"].ToString();
+                        listBoxShopInfo.Items.Add(string.Format("{0}:{1}", "Shop ID", shopInfo.Rows[0]["shop_id"]));
+                        comboBoxShopID.Items.Add(shopInfo.Rows[0]["shop_id"]);
+                        listBoxShopInfo.Items.Add(string.Format("\t {0}:\t{1}", "Shop Type", shopInfo.Rows[0]["shop_type"]));
+                        listBoxShopInfo.Items.Add(string.Format("\t {0}:\t{1}", "Com Count", shopInfo.Rows[0]["com_count"]));
+                        listBoxShopInfo.Items.Add(string.Format("\t {0}:\t{1}", "Mean Price", shopInfo.Rows[0]["mean_price"]));
+                        listBoxShopInfo.Items.Add(string.Format("\t {0}:\t{1}", "Shop Score", shopInfo.Rows[0]["score_each"]));
+                        listBoxShopInfo.Items.Add("\r\n");
+
+                        comboBoxShopID.SelectedIndex = 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                string comText = "\t" + comInfo.Rows[0]["com_text"].ToString() + "\r\n\r\n";
+                string scoreText = "\t" + comInfo.Rows[0]["score"].ToString() + "\r\n\r\n";
+                string timeText = "\t" + comInfo.Rows[0]["post_time"].ToString() + "\r\n\r\n";
+                string picUrls = comInfo.Rows[0]["com_pic"].ToString();
+                string[] picUrlList = picUrls.Split(',');
+                string comHeader = "评论内容:\r\n";
+                string scoreHeader = "商铺得分：\r\n";
+                string timeHeader = "评论时间:";
+                string picHeader = "评论图片：\t\n";
+
+                richTextBox1.Text += (timeHeader + timeText);
+                richTextBox1.Text += (scoreHeader + scoreText);
+                richTextBox1.Text += (comHeader + comText);
+                richTextBox1.Text += picHeader;
+
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+
+                string positiveAspect = comInfo.Rows[0]["PositiveAspects"].ToString();
+                string[] posAspects = positiveAspect.Split(';');
+                for (int i = 0; i < posAspects.Length - 1; i++)
+                {
+                    GetMarkerByName(posAspects[i]).SetMarkerValue(1);
+                }
+                string negativeAspect = comInfo.Rows[0]["NegativeAspects"].ToString();
+                string[] negAspects = negativeAspect.Split(';');
+                for (int i = 0; i < negAspects.Length - 1; i++)
+                {
+                    GetMarkerByName(negAspects[i]).SetMarkerValue(-1);
+                }
+                /*
+                for (int i = 0; i < picUrlList.Length; i++)
+                {
+                    if (picUrlList[i].Length < 5)
+                        continue;
+                    saveImage(picUrlList[i], i);
+                    Clipboard.Clear();   //清空剪贴板
+                    Bitmap bmp = new Bitmap("tempPic/" + string.Format("temp_{0}_{1}.jpg", PicOrderID, i)); //创建Bitmap类对象
+                    Clipboard.SetImage(ZoomBitmap(bmp, richTextBox1.Width - 10));  //将Bitmap类对象写入剪贴板
+                    richTextBox1.Paste();   //将剪贴板中的对象粘贴到RichTextBox1
+                }
+                */
+
+            }
+
+        }
+
+        private void radioButtonAll_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private SpecificMarker GetMarkerByName(string name)
+        {
+            foreach (var marker in SpecificMarkerList)
+            {
+                if (marker.SpecificClassName.Equals(name))
+                    return marker;
+            }
+            return null;
         }
     }
 }

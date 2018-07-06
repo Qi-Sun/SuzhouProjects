@@ -1,0 +1,23 @@
+gID:   6  freq: 29186  ave_rand_freq: 28195.90 (sd: 7514.112)  conc: 0.01513  ave_rand_conc: 0.01708 (sd: 0.0152914)  f-ZScore:   0.13  f-pValue: 0.91500000  c-ZScore:  -0.13  c-pValue: 0.19900000
+gID:  12  freq: 57381  ave_rand_freq: 55876.42 (sd: 14916.235)  conc: 0.02974  ave_rand_conc: 0.03452 (sd: 0.0313244)  f-ZScore:   0.10  f-pValue: 0.91600000  c-ZScore:  -0.15  c-pValue: 0.26200000
+gID:  14  freq: 254739  ave_rand_freq: 244444.57 (sd: 67582.558)  conc: 0.13202  ave_rand_conc: 0.13645 (sd: 0.0436392)  f-ZScore:   0.15  f-pValue: 0.91700000  c-ZScore:  -0.10  c-pValue: 0.19400000
+gID:  36  freq: 28766  ave_rand_freq: 27841.56 (sd: 7354.913)  conc: 0.01491  ave_rand_conc: 0.01696 (sd: 0.0107622)  f-ZScore:   0.13  f-pValue: 0.91400000  c-ZScore:  -0.19  c-pValue: 0.18900000
+gID:  38  freq:  5586  ave_rand_freq:  5026.41 (sd: 1389.744)  conc: 0.00289  ave_rand_conc: 0.00280 (sd: 0.0005541)  f-ZScore:   0.40  f-pValue: 0.07000000  c-ZScore:   0.18  c-pValue: 0.07200000
+gID:  46  freq: 14667  ave_rand_freq: 12919.96 (sd: 3677.668)  conc: 0.00760  ave_rand_conc: 0.00684 (sd: 0.0006746)  f-ZScore:   0.48  f-pValue: 0.03900000  c-ZScore:   1.13  c-pValue: 0.00200000
+gID:  74  freq: 239947  ave_rand_freq: 230622.64 (sd: 63809.685)  conc: 0.12435  ave_rand_conc: 0.12973 (sd: 0.0393163)  f-ZScore:   0.15  f-pValue: 0.91600000  c-ZScore:  -0.14  c-pValue: 0.22900000
+gID:  78  freq: 784424  ave_rand_freq: 821466.94 (sd: 235787.901)  conc: 0.40653  ave_rand_conc: 0.42993 (sd: 0.0541586)  f-ZScore:  -0.16  f-pValue: 0.91700000  c-ZScore:  -0.43  c-pValue: 0.92400000
+gID:  98  freq:  1881  ave_rand_freq:  1657.67 (sd: 459.190)  conc: 0.00097  ave_rand_conc: 0.00092 (sd: 0.0001850)  f-ZScore:   0.49  f-pValue: 0.04700000  c-ZScore:   0.29  c-pValue: 0.06600000
+gID: 102  freq: 28205  ave_rand_freq: 24741.98 (sd: 7031.893)  conc: 0.01462  ave_rand_conc: 0.01315 (sd: 0.0012775)  f-ZScore:   0.49  f-pValue: 0.04200000  c-ZScore:   1.15  c-pValue: 0.01200000
+gID: 108  freq: 13584  ave_rand_freq: 11973.83 (sd: 3401.387)  conc: 0.00704  ave_rand_conc: 0.00638 (sd: 0.0006236)  f-ZScore:   0.47  f-pValue: 0.04400000  c-ZScore:   1.06  c-pValue: 0.02500000
+gID: 110  freq: 190813  ave_rand_freq: 172176.11 (sd: 49763.929)  conc: 0.09889  ave_rand_conc: 0.08874 (sd: 0.0146129)  f-ZScore:   0.37  f-pValue: 0.04300000  c-ZScore:   0.69  c-pValue: 0.00000000
+gID: 238  freq: 280388  ave_rand_freq: 228617.94 (sd: 66485.523)  conc: 0.14531  ave_rand_conc: 0.11632 (sd: 0.0255779)  f-ZScore:   0.78  f-pValue: 0.00000000  c-ZScore:   1.13  c-pValue: 0.00000000
+random graph process 100, 10%
+random graph process 200, 20%
+random graph process 300, 30%
+random graph process 400, 40%
+random graph process 500, 50%
+random graph process 600, 60%
+random graph process 700, 70%
+random graph process 800, 80%
+random graph process 900, 90%
+random graph process 1000, 100%

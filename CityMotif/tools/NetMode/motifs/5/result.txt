@@ -1,0 +1,6 @@
+random graph process 100, 10%
+random graph process 200, 20%
+random graph process 300, 30%
+random graph process 400, 40%
+random graph process 500, 50%
+random graph process 600, 60%
